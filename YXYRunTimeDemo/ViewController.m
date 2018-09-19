@@ -68,9 +68,9 @@
 /**
  关于class_addMethod(...)这个函数的解释
  cls:要添加函数的目标类，
- sel：要添加的函数名，可以随意，但是参数必须和第三个参数保持一致
+ sel：要添加的函数名，可以随意，但是参数必须和第三个参数所表示的函数保持一致
  imp：实现函数的指针，也即是sel函数的实现函数，可以在任何地方实现，但是必须能找到这个指针imp
- types参数解释:"v@:";v表示方法返回值是vode，第一个@表示self，第二个：表示SEL，其他符号在这个文件上面已列出，也可以去下面这个网址查看
+ types参数解释:"v@:";v表示方法返回值是void，第一个@表示self，第二个：表示SEL，其他符号在这个文件上面已列出，也可以去下面这个网址查看
  苹果文档协定https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html
  BOOL class_addMethod(Class _Nullable cls, SEL _Nonnull name, IMP _Nonnull imp, const char * _Nullable types)
  **/
@@ -89,8 +89,14 @@
     //动态添加方法,上面有解释
    Method impMe = class_getInstanceMethod([self class], @selector(seeHello));
    class_addMethod([YXYTest class], @selector(hello), method_getImplementation(impMe), "v@:");
-   YXYTest *te = [YXYTest new];
-   [te performSelector:@selector(hello)];
+    YXYTest *te = [YXYTest new];
+    [te performSelector:@selector(hello)];
+    //方法交换
+   Method origin = class_getInstanceMethod([YXYTest class], @selector(addCount));
+    Method swizz = class_getInstanceMethod([YXYTest class], @selector(takeNumber));
+    method_exchangeImplementations(origin, swizz);
+    [te addCount];
+    [te takeNumber];
 }
 /**
  log:
@@ -159,8 +165,6 @@
 //获取一个类的类方法列表
 - (void)getClassMethodList {
     unsigned int count;
-    //    const char * class_name = class_getName([self class]);
-    //    Class metaClass = objc_getMetaClass(class_name);
     Method *methods = class_copyMethodList(object_getClass([YXYTest class]), &count);
     for (int i = 0; i < count; i++) {
         SEL name = method_getName(methods[i]);

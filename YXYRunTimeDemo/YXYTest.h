@@ -22,7 +22,7 @@
 @property(nonatomic,assign)int count;
 @property(nonatomic,copy)NSString *address;
 
--(void)addCount:(int)ct;
+-(void)addCount;
 
 -(void)takeNumber;
 

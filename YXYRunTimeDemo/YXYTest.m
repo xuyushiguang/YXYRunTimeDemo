@@ -10,14 +10,14 @@
 
 @implementation YXYTest
 
--(void)addCount:(int)ct
+-(void)addCount
 {
-    NSLog(@"%@",NSStringFromSelector(_cmd));
+    NSLog(@"addCount");
 }
 
 -(void)takeNumber
 {
-    NSLog(@"%@",NSStringFromSelector(_cmd));
+    NSLog(@"takeNumber");
 }
 
 +(void)share
