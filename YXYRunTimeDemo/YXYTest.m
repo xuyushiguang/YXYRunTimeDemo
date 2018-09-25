@@ -12,17 +12,17 @@
 
 -(void)addCount
 {
-    NSLog(@"addCount");
+//    NSLog(@"addCount");
 }
 
 -(void)takeNumber
 {
-    NSLog(@"takeNumber");
+//    NSLog(@"takeNumber");
 }
 
 +(void)share
 {
-    NSLog(@"%@",NSStringFromSelector(_cmd));
+//    NSLog(@"%@",NSStringFromSelector(_cmd));
 }
 
 @end

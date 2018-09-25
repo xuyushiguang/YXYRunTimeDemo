@@ -76,7 +76,7 @@
  **/
 -(void)seeHello
 {
-    NSLog(@"seehello: %@",NSStringFromSelector(_cmd));
+//    NSLog(@"seehello: %@",NSStringFromSelector(_cmd));
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -87,16 +87,16 @@
 //    [self getClassMethodList];
     
     //动态添加方法,上面有解释
-   Method impMe = class_getInstanceMethod([self class], @selector(seeHello));
-   class_addMethod([YXYTest class], @selector(hello), method_getImplementation(impMe), "v@:");
-    YXYTest *te = [YXYTest new];
-    [te performSelector:@selector(hello)];
-    //方法交换
-   Method origin = class_getInstanceMethod([YXYTest class], @selector(addCount));
-    Method swizz = class_getInstanceMethod([YXYTest class], @selector(takeNumber));
-    method_exchangeImplementations(origin, swizz);
-    [te addCount];
-    [te takeNumber];
+//   Method impMe = class_getInstanceMethod([self class], @selector(seeHello));
+//   class_addMethod([YXYTest class], @selector(hello), method_getImplementation(impMe), "v@:");
+//    YXYTest *te = [YXYTest new];
+//    [te performSelector:@selector(hello)];
+//    //方法交换
+//   Method origin = class_getInstanceMethod([YXYTest class], @selector(addCount));
+//    Method swizz = class_getInstanceMethod([YXYTest class], @selector(takeNumber));
+//    method_exchangeImplementations(origin, swizz);
+//    [te addCount];
+//    [te takeNumber];
 }
 /**
  log:
@@ -113,7 +113,7 @@
         objc_property_t property = properties[i];
         const char *name = property_getName(property);
         NSString *nameStr = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
-        NSLog(@"Property:%@", nameStr);
+//        NSLog(@"Property:%@", nameStr);
     }
     free(properties);
     
@@ -133,7 +133,7 @@
     Ivar *ivarList = class_copyIvarList([YXYTest class], &count);
     for (int i = 0; i < count; i++) {
         NSString *nameStr = [NSString stringWithUTF8String:ivar_getName(ivarList[i])];
-        NSLog(@"ivarName:%@", nameStr);
+//        NSLog(@"ivarName:%@", nameStr);
     }
     free(ivarList);
    
@@ -154,7 +154,7 @@
     Method *methods = class_copyMethodList([YXYTest class], &count);
     for (int i = 0; i < count; i++) {
         SEL name = method_getName(methods[i]);
-        NSLog(@"InstanceMethod:%@", NSStringFromSelector(name));
+//        NSLog(@"InstanceMethod:%@", NSStringFromSelector(name));
     }
     free(methods);
 }
@@ -168,7 +168,7 @@
     Method *methods = class_copyMethodList(object_getClass([YXYTest class]), &count);
     for (int i = 0; i < count; i++) {
         SEL name = method_getName(methods[i]);
-        NSLog(@"ClassMethod:%@", NSStringFromSelector(name));
+//        NSLog(@"ClassMethod:%@", NSStringFromSelector(name));
     }
     free(methods);
 }
