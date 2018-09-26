@@ -18,8 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    NSString *str = NSLocalizedString(@"语言", @"");
-    NSString *str2 = NSLocalizedString(@"文字", @"");
+   
     
     return YES;
 }

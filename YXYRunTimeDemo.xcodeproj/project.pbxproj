@@ -14,6 +14,7 @@
 		032E7A7D2151E42F00AF7136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032E7A7B2151E42F00AF7136 /* LaunchScreen.storyboard */; };
 		032E7A802151E42F00AF7136 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 032E7A7F2151E42F00AF7136 /* main.m */; };
 		032E7A882151E49500AF7136 /* YXYTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 032E7A872151E49500AF7136 /* YXYTest.m */; };
+		0369E697215A65A200D9DC61 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0369E699215A65A200D9DC61 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,10 @@
 		032E7A7F2151E42F00AF7136 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		032E7A862151E49500AF7136 /* YXYTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYTest.h; sourceTree = "<group>"; };
 		032E7A872151E49500AF7136 /* YXYTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXYTest.m; sourceTree = "<group>"; };
+		0369E693215A658300D9DC61 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		0369E694215A658300D9DC61 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0369E698215A65A200D9DC61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0369E69A215A65A800D9DC61 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +72,7 @@
 				032E7A742151E42D00AF7136 /* ViewController.m */,
 				032E7A862151E49500AF7136 /* YXYTest.h */,
 				032E7A872151E49500AF7136 /* YXYTest.m */,
+				0369E699215A65A200D9DC61 /* Localizable.strings */,
 				032E7A762151E42D00AF7136 /* Main.storyboard */,
 				032E7A792151E42F00AF7136 /* Assets.xcassets */,
 				032E7A7B2151E42F00AF7136 /* LaunchScreen.storyboard */,
@@ -117,6 +123,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 032E7A642151E42D00AF7136;
 			productRefGroup = 032E7A6E2151E42D00AF7136 /* Products */;
@@ -134,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				032E7A7D2151E42F00AF7136 /* LaunchScreen.storyboard in Resources */,
+				0369E697215A65A200D9DC61 /* Localizable.strings in Resources */,
 				032E7A7A2151E42F00AF7136 /* Assets.xcassets in Resources */,
 				032E7A782151E42D00AF7136 /* Main.storyboard in Resources */,
 			);
@@ -160,6 +168,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				032E7A772151E42D00AF7136 /* Base */,
+				0369E693215A658300D9DC61 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -168,8 +177,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				032E7A7C2151E42F00AF7136 /* Base */,
+				0369E694215A658300D9DC61 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0369E699215A65A200D9DC61 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0369E698215A65A200D9DC61 /* en */,
+				0369E69A215A65A800D9DC61 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -179,6 +198,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -237,6 +257,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
